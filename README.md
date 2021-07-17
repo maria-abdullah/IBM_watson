@@ -1,1 +1,3 @@
-# IBM_watson
+# IBM_watson Project 
+
+فكرة المشروع 
