@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css"/>
+    <meta charset="utf-8">
+    <title> Base Controller Panel </title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+    <body>
+       <div>
+       <h1>
+        Base Controller Panel
+       </h1>
+       </div
+       ><br><br>
+     
+        <form method="POST" action="connect.php">
+
+          <table >
+            <tr> 
+               <td></td>
+               <td><button name="direction_button" type="submit" value="Forward"> Forward </button></td>
+               <td></td>
+            </tr>
+
+             <tr>
+               <td><button name="direction_button" type="submit" value="Left"> Left </button></td>
+               <td><button name="direction_button" type="submit" value="Stop"> Stop </button></td>
+               <td><button name="direction_button" type="submit" value="Right"> Right </button></td>
+             </tr>
+
+             <tr>
+               <td></td>
+               <td><button name="direction_button" type="submit" value="Backward"> Backward </button></td>
+               <td></td>
+              </tr>
+
+          </table>
+        </form>
+
+        <br><br>
+        
+        <a href="select.php"> <button class="buttonlink">direction</button> </a>
+
+        <script>
+          window.watsonAssistantChatOptions = {
+              integrationID: "e2a39d95-f009-43c8-a287-b0e35ae952d6", // The ID of this integration.
+              region: "eu-de", // The region your integration is hosted in.
+              serviceInstanceID: "c0365f6a-3499-48aa-8c09-fe2e6acdf270", // The ID of your service instance.
+              onLoad: function(instance) { instance.render(); }
+            };
+          setTimeout(function(){
+            const t=document.createElement('script');
+            t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+            document.head.appendChild(t);
+          });
+        </script>
+
+     </body>
+</html>
+

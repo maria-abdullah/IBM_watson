@@ -1,0 +1,98 @@
+
+body {
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	flex-direction: column;
+    	font-family: sans-serif;
+    	font-size: 14px;
+	    background:hsl(0, 0%, 15%);
+}
+
+h1 {
+        text-align: center;
+        color: #fff;
+        margin-top: 20px;
+        font-size: 50px;
+        font-weight: 100;
+        letter-spacing: 12px;
+        border-bottom: 1px solid #15f4ee;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        color: #3cffed;
+     	text-shadow: 0 0 10px #fff, 0 0 20px #fff,
+	             0 0 30px #03a9f4, 0 0 40px #03a9f4, 
+				 0 0 50px #03a9f4, 0 0 60px #03a9f4,
+				 0 0 70px #03a9f4;   
+}
+ 
+
+td {
+       padding: 20px;
+}
+
+
+button {
+	    width: 150px;
+	    height: 50px;
+    	font-family: 'Roboto', sans-serif;
+    	font-size: 18px;
+    	text-transform: uppercase;
+    	font-weight: 500;
+    	color: #000;
+    	background-color: #15f4ee;
+    	border: none;
+    	border-radius: 45px;
+    	transition: all 0.3s ease 0s;
+     	cursor: pointer;
+	    outline: none;
+}
+
+
+
+
+button:hover{
+     	box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,
+				0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
+     	text-shadow:0 5px 50px 0 #15f4ee, 0 5px 50px 0 #15f4ee;
+	
+}
+
+
+
+.wave{
+		position: fixed;
+		top:  1.2in;
+		left: 0.1in;
+		height: 100%;
+		z-index: -1;
+		width: 35%;
+}
+		
+
+.buttonlink {
+	    width: 150px;
+		height: 50px;
+		font-family: 'Roboto', sans-serif;
+		font-size: 18px;
+		text-transform: uppercase;
+	    font-weight: 500;
+		color: #000;
+		background-color: #fcff5a;
+		border: none;
+		border-radius: 45px;
+		transition: all 0.3s ease 0s;
+		cursor: pointer;
+		outline: none;
+}
+		
+
+			
+.buttonlink:hover, .border-neon:focus {
+		box-shadow: 0 5px 50px 0 #fcff5a inset, 0 5px 50px 0 #fcff5a,
+			       0 5px 50px 0 #fcff5a inset, 0 5px 50px 0 #fcff5a;
+	    text-shadow:0 5px 50px 0 #fcff5a, 0 5px 50px 0 #fcff5a;
+}

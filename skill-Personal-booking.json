@@ -1,0 +1,376 @@
+{
+  "intents": [
+    {
+      "intent": "booking",
+      "examples": [
+        {
+          "text": "I need to book a room"
+        },
+        {
+          "text": "I want to book a room"
+        },
+        {
+          "text": "I want to check available rooms"
+        },
+        {
+          "text": "room"
+        },
+        {
+          "text": "rooms"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "confirm",
+      "examples": [
+        {
+          "text": "sure"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "greeting",
+      "examples": [
+        {
+          "text": "hello"
+        },
+        {
+          "text": "hi"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "no",
+      "examples": [
+        {
+          "text": "N"
+        },
+        {
+          "text": "no"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "select1",
+      "examples": [
+        {
+          "text": "1"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "thanks",
+      "examples": [
+        {
+          "text": "thanks"
+        },
+        {
+          "text": "thank you"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "yes",
+      "examples": [
+        {
+          "text": "Y"
+        },
+        {
+          "text": "yes"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_4_1626479201329",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sure ! there are many available rooms .. Please select one to book."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1626481397473"
+      },
+      "conditions": "#booking",
+      "dialog_node": "node_1_1626481111600",
+      "previous_sibling": "node_3_1626483083804"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Your welcome! I'm glad that I was able to help you. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#thanks",
+      "dialog_node": "node_2_1626479954721",
+      "previous_sibling": "node_8_1626482568736"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Your booking is confirmed ✓"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#confirm",
+      "dialog_node": "node_3_1626483083804",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "greeting",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. I'm Octavia how can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#greeting",
+      "dialog_node": "node_4_1626479201329",
+      "previous_sibling": "node_2_1626479954721"
+    },
+    {
+      "type": "standard",
+      "title": "yes or no ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Did you like it ? Y/N"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "dialog_node": "node_4_1626482212174",
+      "previous_sibling": "node_5_1626481861452"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": " Family room",
+            "source": "https://www.thedoldergrand.com/app/uploads/2020/09/family-room-view-1536x1025.jpg",
+            "response_type": "image"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_4_1626482212174"
+      },
+      "conditions": "#select1",
+      "dialog_node": "node_5_1626481861452",
+      "previous_sibling": "node_8_1626481397473"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Don't worry, I'll help you to find a room that suits you :)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1626481397473"
+      },
+      "conditions": "#no",
+      "dialog_node": "node_5_1626482783693",
+      "previous_sibling": "node_4_1626482212174"
+    },
+    {
+      "type": "standard",
+      "title": "options ",
+      "output": {
+        "generic": [
+          {
+            "title": "available rooms",
+            "options": [
+              {
+                "label": "1- Room with sea view",
+                "value": {
+                  "input": {
+                    "text": "1"
+                  }
+                }
+              },
+              {
+                "label": "2- Family room",
+                "value": {
+                  "input": {
+                    "text": "2"
+                  }
+                }
+              }
+            ],
+            "description": "",
+            "response_type": "option"
+          }
+        ]
+      },
+      "dialog_node": "node_8_1626481397473",
+      "previous_sibling": "node_1_1626481111600"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great ! Would you like to confirm the room booking ?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#yes",
+      "dialog_node": "node_8_1626482568736",
+      "previous_sibling": "node_5_1626482783693"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Welcome to your personal booking assistant. "
+              },
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Personal booking",
+  "language": "en",
+  "description": ""
+}
